@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker</title>
+    <!-- Tailwind & DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="py-5 px-4 shadow-md fixed top-0 w-full bg-white z-50">
+        <div class="max-w-[95%] mx-auto md:flex justify-between">
+            <div class="flex justify-center items-center gap-2 pb-5">
+                <i class="fa-brands fa-github text-2xl"></i>
+                <h3 class="font-semibold text-2xl">GitHub All Issues Tracker</h3>
+            </div>
+
+            <div class="join gap-4 flex justify-center">
+                <input id="searchInput" type="text" placeholder="Search issues" class="input input-bordered join-item w-64" />
+                <button id="searchBtn" class="btn btn-primary join-item rounded-md">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="pt-28">
+        <section class="max-w-[85%] mx-auto">
+
+            <!-- Buttons -->
+            <div class="flex gap-5 py-10">
+                <button id="btnAll" class="btn btn-primary px-10 hover:scale-105 hover:shadow-md transition-transform duration-200" onclick="filterIssues('ALL')">All</button>
+                <button id="btnOpen" class="btn px-8 hover:scale-105 hover:shadow-md transition-transform duration-200" onclick="filterIssues('OPEN')">Open</button>
+                <button id="btnClosed" class="btn px-8 hover:scale-105 hover:shadow-md transition-transform duration-200" onclick="filterIssues('CLOSED')">Closed</button>
+            </div>
+
+            <!-- Issues Counter -->
+            <div class="flex justify-between shadow-[0_0_10px_rgba(0,0,0,0.2)] md:px-4 px-2 py-6 rounded-sm">
+                <div class="flex items-center gap-2">
+                    <img class="bg-[#ECE4FF] rounded-full px-2 py-2" src="assets/Aperture.png" alt="">
+                    <div>
+                        <h2 id="issueCount" class="text-lg font-semibold">0 Issues</h2>
+                        <p class="text-[#64748B]">Track and manage your project issues</p>
+                    </div>
+                </div>
+
+                <div class="md:flex gap-5">
+                    <div class="flex items-center gap-2">
+                        <p class="bg-[#00A96E] rounded-full px-1 py-1"></p>
+                        <p class="font-medium">Open</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <p class="bg-[#A855F7] rounded-full px-1 py-1"></p>
+                        <p class="font-medium">Closed</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Issues Container -->
+            <div id="issuesContainer" class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 pt-10">
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Modal overlay -->
+    <div id="detailModal" class="fixed inset-0 flex items-center justify-center hidden z-50">
+        <!-- semi-transparent blurred background -->
+        <div class="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-sm"></div>
+
+        <!-- modal content -->
+        <div class="relative bg-white rounded-lg max-w-lg w-full p-6 shadow-lg z-10">
+            <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl font-bold">&times;</button>
+            <div id="modalContent">
+                <!-- Details here -->
+            </div>
+        </div>
+    </div>
+    <!-- JS Files -->
+    <script src="script.js"></script>
+    <script src="modal.js"></script>
+    <script src="search.js"></script>
+</body>
+
+</html>
