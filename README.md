@@ -51,7 +51,7 @@ project-folder/
 └── assets/           # Images, icons, and logos
 
 
-⚙️ How to Run the Project
+⚙️ How to Run the Project.
 
 Clone or download the project repository.
 
@@ -66,7 +66,7 @@ Explore the dashboard, search, filter, and view issues.
 
 
 
-📚 JavaScript Concepts Explained
+📚 JavaScript Concepts Explained.
 
 Here are some key concepts used in the project, explained in plain language.
 
