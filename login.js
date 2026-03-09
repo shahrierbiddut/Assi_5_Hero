@@ -1,23 +1,18 @@
-document.getElementById('loginBtn')
-    .addEventListener('click', function() {
-        // console.log('login btn');
-        // 1. get the username
-        const userInput = document.getElementById('userInput');
-        const usernameInput = userInput.value;
-        // console.log(usernameInput);
-        // 2. get the password
-        const userPin = document.getElementById('userPin');
-        const userInputPin = userPin.value;
-        // console.log(userInputPin);
-        // 3. match username & pin
-        if (usernameInput == 'admin' && userInputPin == 'admin123') {
-            alert('Login Success');
-            // replace home page
-            window.location.assign('home.html');
-            document.getElementById('userInput').value = '';
-            document.getElementById('userPin').value = '';
-        } else {
-            alert('Login Failed');
-            return;
-        }
-    });
+const loginBtn = document.getElementById("loginBtn");
+
+loginBtn.addEventListener("click", handleLogin);
+
+function handleLogin() {
+    const username = document.getElementById("userInput").value.trim();
+    const password = document.getElementById("userPin").value.trim();
+
+    const validUser = "admin";
+    const validPass = "admin123";
+
+    if (username === validUser && password === validPass) {
+        alert("Login successful");
+        window.location.href = "home.html";
+    } else {
+        alert("Invalid username or password");
+    }
+}

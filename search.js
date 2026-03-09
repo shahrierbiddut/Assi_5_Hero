@@ -1,13 +1,19 @@
 const searchInput = document.getElementById('searchInput');
 const searchBtn = document.getElementById('searchBtn');
 
-function searchIssues() {
-    const query = searchInput.value.trim().toLowerCase();
-    if (!query) { displayIssues(allIssues); return; }
+async function searchIssues() {
 
-    const filtered = allIssues.filter(issue => issue.title.toLowerCase().includes(query));
-    displayIssues(filtered);
+    const query = searchInput.value.trim();
+
+    if (!query) {
+        displayIssues(allIssues);
+        return;
+    }
+
+    const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${query}`);
+    const data = await res.json();
+
+    displayIssues(data.data);
 }
 
-searchInput.addEventListener("input", searchIssues);
 searchBtn.addEventListener("click", searchIssues);
