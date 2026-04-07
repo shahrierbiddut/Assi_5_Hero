@@ -39,9 +39,9 @@
 
             <!-- Buttons -->
             <div class="flex gap-5 py-10">
-                <button id="btnAll" class="btn btn-primary px-10 hover:scale-105 hover:shadow-md transition-transform duration-200" onclick="filterIssues('ALL')">All</button>
-                <button id="btnOpen" class="btn px-8 hover:scale-105 hover:shadow-md transition-transform duration-200" onclick="filterIssues('OPEN')">Open</button>
-                <button id="btnClosed" class="btn px-8 hover:scale-105 hover:shadow-md transition-transform duration-200" onclick="filterIssues('CLOSED')">Closed</button>
+                <button id="btnAll" onclick="filterIssues('ALL')" class="btn btn-primary">All</button>
+                <button id="btnOpen" onclick="filterIssues('OPEN')" class="btn">Open</button>
+                <button id="btnClosed" onclick="filterIssues('CLOSED')" class="btn">Closed</button>
             </div>
 
             <!-- Issues Counter -->
@@ -66,7 +66,6 @@
                 </div>
             </div>
 
-            <!-- Issues Container -->
             <!-- Loader -->
             <div id="loader" class="flex justify-center py-10 hidden">
                 <span class="loading loading-spinner loading-lg text-primary"></span>
@@ -79,15 +78,13 @@
     </main>
 
     <!-- Modal overlay -->
-    <div id="detailModal" class="fixed inset-0 flex items-center justify-center hidden z-50">
-        <!-- semi-transparent blurred background -->
-        <div class="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-sm"></div>
+    <div id="detailModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center hidden z-50">
+        <div class="absolute"></div>
 
         <!-- modal content -->
         <div class="relative bg-white rounded-lg max-w-lg w-full p-6 shadow-lg z-10">
             <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl font-bold">&times;</button>
             <div id="modalContent">
-                <!-- Details here -->
             </div>
         </div>
     </div>
@@ -95,6 +92,49 @@
     <script src="script.js"></script>
     <script src="modal.js"></script>
     <script src="search.js"></script>
+
+    <!-- Footer Start -->
+    <footer class="bg-gray-900 text-white mt-10">
+        <div class="max-w-7xl mx-auto px-6 py-10">
+
+            <!-- Top Section -->
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Logo / About -->
+                <div>
+                    <h2 class="text-xl font-bold mb-3">Issue Tracker</h2>
+                    <p class="text-gray-400 text-sm">
+                        Manage your issues efficiently with our modern tracking system.
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h3 class="font-semibold mb-3">Quick Links</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">Home</a></li>
+                        <li><a href="#" class="hover:text-white">All Issues</a></li>
+                        <li><a href="#" class="hover:text-white">Add Issue</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-semibold mb-3">Contact</h3>
+                    <p class="text-sm text-gray-400">Email: shahrierhossainbiddut@gmail.com</p>
+                    <p class="text-sm text-gray-400 mt-1">Phone: +880 1738803106</p>
+                </div>
+
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-500">
+                © 2026 Issue Tracker. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+    <!-- Footer End -->
 </body>
 
 </html>
