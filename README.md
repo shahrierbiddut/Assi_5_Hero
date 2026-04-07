@@ -322,6 +322,10 @@ This project is open source and available under the MIT License.
 **Shahriar Biddut**  
 GitHub: [@shahrierbiddut](https://github.com/shahrierbiddut)
 
+Repositories Link: (https://github.com/shahrierbiddut/Assi_5_Hero)
+
+Netlify Live Link:  https://shahrierbiddut-assi-5-hero.netlify.app/
+
 ---
 
 ## 🤝 Contributing
@@ -339,7 +343,7 @@ For issues or questions, please open a GitHub issue or contact the maintainer.
 
 ---
 
-**Last Updated:** March 2026  
+**Last Updated:** April 2026  
 **Version:** 1.0.0
 
 Human understanding:
