@@ -87,7 +87,7 @@ function displayIssues(issues) {
 
         // Create Card
         const card = document.createElement("div");
-        card.className = `shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer bg-white`;
+        card.className = `shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded-lg hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer bg-white border-t-4 ${borderColor}`;
 
         const labelChips = (issue.labels || []).map(label => {
             const normalized = label.toLowerCase();
